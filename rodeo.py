@@ -1,6 +1,17 @@
 def rename_rodeo_columns(columns):
-    # Replace this and the line below with your code...
-    raise NotImplementedError
+    new_columns = []
+    for column in columns:
+        new_column = ''
+        for letter in column:
+            if letter == ' ':
+                new_column += '_'
+            else:
+                new_column += letter
+
+        if new_column[-5:] == "_Data":
+            new_column = new_column[:-5]
+        new_columns += [new_column.lower()]
+    return new_columns
 
 
 if __name__ == '__main__':
